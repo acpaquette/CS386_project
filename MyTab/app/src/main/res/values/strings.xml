@@ -1,4 +1,15 @@
 <resources>
-    <string name="app_name">Hack</string>
+    <string name="app_name">MyTab</string>
     <string name="title_activity_edit_wine">activity_edit_wine</string>
+    <string name="Username">Username</string>
+    <string name="Password">Password</string>
+    <string name="PasswordConfirm">Confirm Password</string>
+    <string name="Login">Login</string>
+    <string name="Description">This app was designed to allow people to expand their tastes in wine, beer,
+            or mixed drinks by recording drinks they have loved or hated in a journal format.</string>
+    <string name="About">About</string>
+    <string name="Authors">
+        Created By:\nChandler Hayes\nKelli Ruddy\nConner Schwirian\nLuis Arroyo\nAdam Paquette
+    </string>
+    <string name="signUp">Sign Up</string>
 </resources>

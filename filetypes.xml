@@ -1,0 +1,10 @@
+<application>
+  <component name="FileTypeManager" version="17">
+    <extensionMap>
+      <mapping pattern="meh" type="PHP" />
+      <mapping pattern="test" type="PHP" />
+      <mapping pattern="databaseAccess.js" type="PLAIN_TEXT" />
+      <mapping pattern="MySQLDatabaseConstructor" type="SQL" />
+    </extensionMap>
+  </component>
+</application>

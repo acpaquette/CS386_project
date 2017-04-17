@@ -5,101 +5,57 @@
     android:layout_height="match_parent"
     android:id="@+id/Main_Container">
 
-    <LinearLayout
-        android:orientation="vertical"
+    <TextView
+        android:id="@+id/about_title"
+        android:text="@string/About"
+        android:textSize="20sp"
+        android:textColor="@color/black"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        android:weightSum="1">
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true" />
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:weightSum="1">
+    <TextView
+        android:id="@+id/authors"
+        android:text="@string/Authors"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/about_title"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
 
-            <EditText
-                android:layout_width="139dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/blank4"
-                android:layout_weight="0.07" />
+    <TextView
+        android:id="@+id/description"
+        android:text="@string/Description"
+        android:textColor="@color/black"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/authors"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"/>
 
-            <EditText
-                android:layout_width="71dp"
-                android:layout_height="wrap_content"
-                android:inputType="textMultiLine"
-                android:ems="10"
-                android:id="@+id/about_title"
-                android:text="ABOUT" />
 
-        </LinearLayout>
+    <!--<LinearLayout-->
+        <!--android:orientation="vertical"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="match_parent"-->
+        <!--android:weightSum="1"-->
+        <!--android:layout_alignParentTop="true"-->
+        <!--android:layout_alignParentLeft="true"-->
+        <!--android:layout_alignParentStart="true">-->
+    <!--</LinearLayout>-->
 
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/created_by_text"
-            android:text="Created By:" />
+    <!--<LinearLayout-->
+        <!--android:orientation="horizontal"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:id="@+id/linearLayout">-->
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="91dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/blank1" />
-
-            <EditText
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Chandler Hayes"
-                android:ems="10"
-                android:id="@+id/name1"
-                android:layout_weight="1" />
-        </LinearLayout>
-
-        <LinearLayout
-            android:orientation="horizontal"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <EditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:ems="10"
-                android:id="@+id/blank2"
-                android:layout_weight="1" />
-
-            <EditText
-                android:layout_width="292dp"
-                android:layout_height="wrap_content"
-                android:inputType="textPersonName"
-                android:text="Kelli Ruddy"
-                android:ems="10"
-                android:id="@+id/name2" />
-        </LinearLayout>
-
-        <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="textPersonName"
-            android:ems="10"
-            android:id="@+id/blank3" />
-
-        <MultiAutoCompleteTextView
-            android:text="MultiAutoCompleteTextView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/multiAutoCompleteTextView"
-            tools:text="This app was designed to allow people to expand their tastes in wine, beer, or mixed drinks by recording drinks they have loved or hated in a journal format." />
-
-    </LinearLayout>
+    <!--</LinearLayout>-->
 </RelativeLayout>
