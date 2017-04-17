@@ -9,7 +9,7 @@ import android.media.Image;
 
 public class Beer extends Drink implements IDrink{
     // Scale of bitterness of beer
-    float ibu;
+    private float ibu;
 
     public float getIBU() {
         return this.ibu;
@@ -19,23 +19,10 @@ public class Beer extends Drink implements IDrink{
         this.ibu = ibu;
     }
 
-    @Override
-    public void setImage(Image image) {
 
-    }
-
-    @Override
-    public Image getImage() {
-        return null;
-    }
-
-    @Override
     public void update() {
-
     }
 
-    @Override
     public void edit() {
-
     }
 }

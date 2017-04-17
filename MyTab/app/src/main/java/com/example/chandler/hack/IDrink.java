@@ -1,4 +1,4 @@
-package com.example.chander.hack;
+package com.example.chandler.hack;
 
 import android.media.Image;
 

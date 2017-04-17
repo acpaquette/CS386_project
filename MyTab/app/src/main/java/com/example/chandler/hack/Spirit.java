@@ -8,7 +8,7 @@ import android.media.Image;
  */
 
 public class Spirit extends Drink implements IDrink{
-    int proof;
+    private int proof;
 
     public int getProof() {
         return this.proof;
@@ -16,16 +16,6 @@ public class Spirit extends Drink implements IDrink{
 
     public void setProof(int proof) {
         this.proof = proof;
-    }
-
-    @Override
-    public void setImage(Image image) {
-
-    }
-
-    @Override
-    public Image getImage() {
-        return null;
     }
 
     @Override
