@@ -52,13 +52,18 @@ public class LoginActivity extends AppCompatActivity {
             // It is currently used as the detector for the creation of an account
             // If the file exists, the "account" has been registered and the user file
             // is present
+            setUser(new User(ed1.getText().toString(), ed2.getText().toString()));
             FileReader file = new FileReader(
-                    getFilesDir().getPath() + ed1.getText().toString() + ed2.getText().toString() +
-                            "DrinkList.json");
+                    getFilesDir().getPath() + user.getUsername() + user.getPassword() + "DrinkList.json");
+
             Toast.makeText(getBaseContext(),
                     "Redirecting...", Toast.LENGTH_SHORT).show();
 
             Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            Bundle bundle = new Bundle();
+            bundle.putString("username", user.getUsername());
+            bundle.putString("password", user.getPassword());
+            intent.putExtra("User", bundle);
             startActivity(intent);
         }
         catch (IOException e) {
