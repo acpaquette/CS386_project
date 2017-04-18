@@ -18,6 +18,7 @@ public class ListActivity extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView lvItems;
+    private User user = User.getInstance();
 
 
     //automatically created when a project is made & it creates this file

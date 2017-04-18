@@ -9,10 +9,13 @@ public class User {
     private int userId;
     private String username;
     private String password;
+    private static final User ourInstance = new User();
 
-    public User(String username, String password) {
-        setUsername(username);
-        setPassword(password);
+    protected User(){
+    }
+
+    public static User getInstance() {
+        return ourInstance;
     }
 
     public int getUserId() {

@@ -14,9 +14,9 @@ import java.io.FileReader;
 import java.io.IOException;
 
 public class LoginActivity extends AppCompatActivity {
-    Button b1, b2;
-    EditText ed1, ed2;
-    User user;
+    private Button b1, b2;
+    private EditText ed1, ed2;
+    private User user = User.getInstance();
 
     @Override
     protected void onCreate(final Bundle savedInstanceState) {
@@ -55,6 +55,8 @@ public class LoginActivity extends AppCompatActivity {
             FileReader file = new FileReader(
                     getFilesDir().getPath() + ed1.getText().toString() + ed2.getText().toString() +
                             "DrinkList.json");
+            user.setUsername(ed1.getText().toString());
+            user.setPassword(ed2.getText().toString());
             Toast.makeText(getBaseContext(),
                     "Redirecting...", Toast.LENGTH_SHORT).show();
 
@@ -64,7 +66,7 @@ public class LoginActivity extends AppCompatActivity {
         catch (IOException e) {
             Toast.makeText(getBaseContext(),
                     "Incorrect Credentials", Toast.LENGTH_SHORT).show();
-            Log.i("IOException", e.getMessage());
+            Log.i("IOException Login", e.getMessage());
         }
         catch (NullPointerException e) {
             Toast.makeText(getBaseContext(),
