@@ -34,7 +34,7 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
-        updateFileDir();
+        setFileDir();
     }
 
     public String getPassword() {
@@ -43,7 +43,7 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
-        updateFileDir();
+        setFileDir();
     }
 
     public String getAndroidFileDir() {
@@ -52,13 +52,14 @@ public class User {
 
     public void setAndroidFileDir(String androidFileDir) {
         this.androidFileDir = androidFileDir;
+        setFileDir();
     }
 
     public String getFileDir() {
         return this.fileDir;
     }
 
-    private void updateFileDir() {
+    private void setFileDir() {
         this.fileDir = this.androidFileDir + this.username + this.password + "DrinkList.json";
     }
 }
