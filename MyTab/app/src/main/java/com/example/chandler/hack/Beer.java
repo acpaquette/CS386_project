@@ -1,10 +1,8 @@
 package com.example.chandler.hack;
 
-import android.media.Image;
-
 /**
- * The purpose of this class is to build a Beer class that takes the Drink
- * extend and the alcohol tuturial
+ * The purpose of this class is to build a Beer class that extends Drink
+ * and implements the IDrink interface
  */
 
 public class Beer extends Drink implements IDrink{
@@ -15,7 +13,7 @@ public class Beer extends Drink implements IDrink{
         return this.ibu;
     }
 
-    public void setIBU(float alcohol_lvl) {
+    public void setIBU(float ibu) {
         this.ibu = ibu;
     }
 

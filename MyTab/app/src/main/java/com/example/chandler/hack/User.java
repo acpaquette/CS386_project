@@ -9,13 +9,15 @@ public class User {
     private int userId;
     private String username;
     private String password;
-    private static final User ourInstance = new User();
+    private String fileDir;
+    private String androidFileDir;
+    private static final User instance = new User();
 
-    protected User(){
+    private User(){
     }
 
     public static User getInstance() {
-        return ourInstance;
+        return instance;
     }
 
     public int getUserId() {
@@ -32,6 +34,7 @@ public class User {
 
     public void setUsername(String username) {
         this.username = username;
+        updateFileDir();
     }
 
     public String getPassword() {
@@ -40,5 +43,22 @@ public class User {
 
     public void setPassword(String password) {
         this.password = password;
+        updateFileDir();
+    }
+
+    public String getAndroidFileDir() {
+        return androidFileDir;
+    }
+
+    public void setAndroidFileDir(String androidFileDir) {
+        this.androidFileDir = androidFileDir;
+    }
+
+    public String getFileDir() {
+        return this.fileDir;
+    }
+
+    private void updateFileDir() {
+        this.fileDir = this.androidFileDir + this.username + this.password + "DrinkList.json";
     }
 }
