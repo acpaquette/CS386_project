@@ -6,7 +6,7 @@ import android.media.Image;
  * Created by adampaquette on 4/13/17.
  */
 
-public class Drink {
+public class Drink implements IDrink {
 
     private int rating;
     private String name, description;
@@ -34,5 +34,19 @@ public class Drink {
 
     public void setDescription(String description) {
         this.description = description;
+    }
+
+    public Image getImage() {
+        return this.image;
+    }
+
+    public void setImage(Image image) {
+        this.image = image;
+    }
+
+    public void update() {
+    }
+
+    public void edit() {
     }
 }

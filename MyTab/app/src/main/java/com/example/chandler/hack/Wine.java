@@ -4,7 +4,7 @@ package com.example.chandler.hack;
  * Created by adampaquette on 4/13/17.
  */
 
-public class Wine extends Drink {
+public class Wine extends Drink implements IDrink{
 
     private String flavorNote, type;
 
@@ -22,5 +22,12 @@ public class Wine extends Drink {
 
     public void setType(String type) {
         this.type = type;
+    }
+
+
+    public void update() {
+    }
+
+    public void edit() {
     }
 }
