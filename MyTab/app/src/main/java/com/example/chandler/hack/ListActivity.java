@@ -2,6 +2,7 @@ package com.example.chandler.hack;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
@@ -18,6 +19,7 @@ public class ListActivity extends AppCompatActivity {
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView lvItems;
+    private User user = User.getInstance();
 
 
     //automatically created when a project is made & it creates this file
@@ -27,15 +29,13 @@ public class ListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_list);
 
         lvItems = (ListView) findViewById(R.id.lvItems);
-        items = new ArrayList<String>();
+        items = new ArrayList<>();
 
         //this will extract the users data
         readItems();
 
-        itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, items);
+        itemsAdapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, items);
         lvItems.setAdapter(itemsAdapter);
-//        items.add("First Item");
-//        items.add("Second Item");
 
         //the method sets up a listener to remove an item
         setupListViewListener();
@@ -76,10 +76,10 @@ public class ListActivity extends AppCompatActivity {
         File filesDir = getFilesDir();
         File todoFile = new File(filesDir, "todo.txt");
         try{
-            items = new ArrayList<String>(FileUtils.readLines(todoFile));
+            items = new ArrayList<>(FileUtils.readLines(todoFile));
         }
         catch(IOException e) {
-            items = new ArrayList<String>();
+            items = new ArrayList<>();
         }
     }
 
@@ -92,7 +92,7 @@ public class ListActivity extends AppCompatActivity {
             FileUtils.writeLines(todoFile, items);
         }
         catch(IOException e) {
-            e.printStackTrace();
+            Log.e("IOException in Write", e.getMessage());
         }
     }
 
