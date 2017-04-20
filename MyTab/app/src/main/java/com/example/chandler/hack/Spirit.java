@@ -8,6 +8,11 @@ package com.example.chandler.hack;
 public class Spirit extends Drink implements IDrink{
     private int proof;
 
+    public Spirit() {
+	super();
+	proof = 0;
+    }
+
     public int getProof() {
         return this.proof;
     }

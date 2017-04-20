@@ -13,6 +13,13 @@ public class Drink implements IDrink {
     private String description;
     private Image image;
 
+    public Drink() {
+        rating = 0;
+	name = "";
+	description = "";
+	image = new Image();
+    }
+
     public int getRating() {
         return this.rating;
     }
