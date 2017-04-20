@@ -1,7 +1,5 @@
 package com.example.chandler.hack;
 
-import android.media.Image;
-
 /**
  * The purpose of this class is to build a Spirit class that takes the Drink
  * extend and the alcohol tuturial

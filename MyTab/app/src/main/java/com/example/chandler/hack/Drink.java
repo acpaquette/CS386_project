@@ -9,7 +9,8 @@ import android.media.Image;
 public class Drink implements IDrink {
 
     private int rating;
-    private String name, description;
+    private String name;
+    private String description;
     private Image image;
 
     public int getRating() {
