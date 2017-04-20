@@ -9,6 +9,11 @@ public class Beer extends Drink implements IDrink{
     // Scale of bitterness of beer
     private float ibu;
 
+    public Beer() {
+	super();
+	ibu = 0.0;
+    }
+
     public float getIBU() {
         return this.ibu;
     }

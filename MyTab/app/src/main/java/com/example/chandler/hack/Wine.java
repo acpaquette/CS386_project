@@ -9,6 +9,12 @@ public class Wine extends Drink implements IDrink{
     private String flavorNote;
     private String type;
 
+    public Wine() {
+	super();
+	flavorNote = "";
+	type = "";
+    }
+
     public String getFlavorNote() {
         return this.flavorNote;
     }
