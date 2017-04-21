@@ -17,7 +17,7 @@ public class Drink implements IDrink {
         rating = 0;
 	name = "";
 	description = "";
-	image = new Image();
+	//image = new Image();
     }
 
     public int getRating() {

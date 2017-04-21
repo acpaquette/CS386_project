@@ -5,20 +5,20 @@ package com.example.chandler.hack;
  * and implements the IDrink interface
  */
 
-public class Beer extends Drink implements IDrink{
+public class Beer extends Drink implements IDrink {
     // Scale of bitterness of beer
-    private float ibu;
+    private double ibu;
 
     public Beer() {
 	super();
 	ibu = 0.0;
     }
 
-    public float getIBU() {
+    public double getIBU() {
         return this.ibu;
     }
 
-    public void setIBU(float ibu) {
+    public void setIBU(double ibu) {
         this.ibu = ibu;
     }
 
