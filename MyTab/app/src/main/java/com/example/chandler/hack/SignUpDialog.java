@@ -93,6 +93,6 @@ public class SignUpDialog extends DialogFragment {
         } catch (IOException e) {
             Log.e("IOException SignUp", e.getMessage());
         }
-        Log.d("Drink JSON", obj.toString());
+        //Log.d("Drink JSON", obj.toString());
     }
 }
