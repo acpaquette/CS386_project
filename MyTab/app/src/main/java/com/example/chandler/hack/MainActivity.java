@@ -12,7 +12,12 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button b1, b2, b3, b4, b5;
+    private Button b1;
+    private Button b2;
+    private Button b3;
+    private Button b4;
+    private Button b5;
+
     public static final String BUTTON = "com.example.chandler.hack.Button";
 
     @Override
@@ -48,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
-                intent.putExtra(BUTTON, b2.getId());
+                intent.putExtra(BUTTON, b3.getId());
                 startActivity(intent);
             }
         });
@@ -57,7 +62,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, ListActivity.class);
-                intent.putExtra(BUTTON, b2.getId());
+                intent.putExtra(BUTTON, b4.getId());
                 startActivity(intent);
             }
         });

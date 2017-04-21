@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -20,14 +21,17 @@ import java.io.IOException;
  * Created by adampaquette on 4/15/17.
  */
 
-public class signUpDialog extends DialogFragment {
+public class SignUpDialog extends DialogFragment {
 
-    EditText username, pass, passConfirm;
-    Button b1, b2;
-    String fileDir;
+    private EditText username;
+    private EditText pass;
+    private EditText passConfirm;
+    private Button b1;
+    private Button b2;
+    private String fileDir;
 
-    static signUpDialog newInstance() {
-        return new signUpDialog();
+    static SignUpDialog newInstance() {
+        return new SignUpDialog();
     }
 
     @Nullable
@@ -48,13 +52,12 @@ public class signUpDialog extends DialogFragment {
             @Override
             public void onClick(View v) {
                 if (pass.getText().toString().equals(passConfirm.getText().toString())) {
-                    ((LoginActivity)getActivity()).setUser(
-                            new User(username.getText().toString(), pass.getText().toString()));
                     createDrinkFile(username.getText().toString(), pass.getText().toString());
                     dismiss();
                 }
                 else {
-                    dismiss();
+                    Toast.makeText(v.getContext(),
+                            "Password does not match", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -78,18 +81,18 @@ public class signUpDialog extends DialogFragment {
             obj.put("Mixed", list);
         }
         catch (org.json.JSONException e) {
-            Log.d("JSON ERROR", e.getMessage());
+            Log.e("JSON ERROR", e.getMessage());
         }
 
         try {
             FileWriter file = new FileWriter(fileDir + username + password + "DrinkList.json");
-
             file.write(obj.toString());
             file.flush();
+            file.close();
 
         } catch (IOException e) {
-            Log.i("IOException", e.getMessage());
+            Log.e("IOException SignUp", e.getMessage());
         }
-        Log.d("Drink JSON", obj.toString());
+        //Log.d("Drink JSON", obj.toString());
     }
 }
