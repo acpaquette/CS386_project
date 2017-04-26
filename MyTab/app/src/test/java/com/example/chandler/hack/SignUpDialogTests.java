@@ -27,9 +27,6 @@ public class SignUpDialogTests {
     @Test
     public void testFileCreation() {
         Activity newActivity = mock(LoginActivity.class);
-        when(newActivity.getFilesDir()).thenAnswer(i -> {
-            return "/data/user/0/com.example.chandler/files/";
-        });
         SignUpDialog dialog = SignUpDialog.newInstance();
         dialog.createDrinkFile("username", "password");
         boolean passed = true;
