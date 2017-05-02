@@ -11,9 +11,6 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
-import org.json.JSONArray;
-import org.json.JSONObject;
-
 import java.io.FileWriter;
 import java.io.IOException;
 
@@ -28,7 +25,7 @@ public class SignUpDialog extends DialogFragment {
     private EditText passConfirm;
     private Button b1;
     private Button b2;
-    private String fileDir;
+    private User user = User.getInstance();
 
     static SignUpDialog newInstance() {
         return new SignUpDialog();
@@ -44,9 +41,6 @@ public class SignUpDialog extends DialogFragment {
         username = (EditText) v.findViewById(R.id.usernameText);
         pass = (EditText) v.findViewById(R.id.passText);
         passConfirm = (EditText) v.findViewById(R.id.passTextConfirm);
-
-        fileDir = getArguments().getString("fileDir");
-        Log.i("fileDir", fileDir);
 
         b1.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -72,27 +66,13 @@ public class SignUpDialog extends DialogFragment {
     }
 
     public void createDrinkFile(String username, String password) {
-        JSONObject obj = new JSONObject();
-
-        JSONArray list = new JSONArray();
         try {
-            obj.put("Wine", list);
-            obj.put("Beer", list);
-            obj.put("Mixed", list);
-        }
-        catch (org.json.JSONException e) {
-            Log.e("JSON ERROR", e.getMessage());
-        }
-
-        try {
-            FileWriter file = new FileWriter(fileDir + username + password + "DrinkList.json");
-            file.write(obj.toString());
+            FileWriter file = new FileWriter(user.getAndroidFileDir() + "/" + username + password + "DrinkList.json");
             file.flush();
             file.close();
 
         } catch (IOException e) {
             Log.e("IOException SignUp", e.getMessage());
         }
-        //Log.d("Drink JSON", obj.toString());
     }
 }

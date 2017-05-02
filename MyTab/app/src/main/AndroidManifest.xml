@@ -11,24 +11,21 @@
         <activity android:name=".LoginActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".activity_edit_wine"
-                  android:label="@string/title_activity_edit_wine"
-                  android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name=".AboutActivity">
-
-        </activity>
-
-        <activity android:name=".ListActivity">
-
-        </activity>
+        <activity android:name=".MainActivity"></activity>
+        <activity
+            android:name=".activity_edit_wine"
+            android:label="@string/title_activity_edit_wine"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity android:name=".AboutActivity"></activity>
+        <activity android:name=".ListActivity"></activity>
+        <activity
+            android:name=".AddDrinkActivity"
+            android:label="@string/title_activity_add_drink"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

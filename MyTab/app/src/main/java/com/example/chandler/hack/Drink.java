@@ -8,7 +8,7 @@ import android.media.Image;
 
 public class Drink implements IDrink {
 
-    private int rating;
+    private float rating;
     private String name;
     private String description;
     private Image image;
@@ -20,11 +20,11 @@ public class Drink implements IDrink {
 	//image = new Image();
     }
 
-    public int getRating() {
+    public float getRating() {
         return this.rating;
     }
 
-    public void setRating(int rating) {
+    public void setRating(float rating) {
         this.rating = rating;
     }
 
