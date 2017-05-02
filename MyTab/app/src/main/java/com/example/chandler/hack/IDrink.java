@@ -16,9 +16,9 @@ public interface IDrink {
 
 	public Image getImage();
 
-	public void setRating(int rating);
+	public void setRating(float rating);
 
-	public int getRating();
+	public float getRating();
 
 	public void update();
 	

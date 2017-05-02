@@ -1,12 +1,12 @@
 package com.example.chandler.hack;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
-import android.widget.EditText;
 import android.widget.ListView;
 
 import org.apache.commons.io.FileUtils;
@@ -16,6 +16,7 @@ import java.io.IOException;
 import java.util.ArrayList;
 
 public class ListActivity extends AppCompatActivity {
+
     private ArrayList<String> items;
     private ArrayAdapter<String> itemsAdapter;
     private ListView lvItems;
@@ -27,6 +28,7 @@ public class ListActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+        getIntent().getExtras();
 
         lvItems = (ListView) findViewById(R.id.lvItems);
         items = new ArrayList<>();
@@ -43,13 +45,9 @@ public class ListActivity extends AppCompatActivity {
 
     //This adds an item to the list and will be displayed in the list view
     public void onAddItem(View v) {
-        EditText etNewItem = (EditText) findViewById(R.id.etNewItem);
-        String itemText = etNewItem.getText().toString();
-        itemsAdapter.add(itemText);
-        etNewItem.setText("");
-
-        //updating the file with the list data
-        writeItems();
+        Intent intent = new Intent(ListActivity.this, AddDrinkActivity.class);
+        startActivity(intent);
+        finish();
     }
 
     // Attaches a long click listener to the ListView
@@ -73,23 +71,23 @@ public class ListActivity extends AppCompatActivity {
 
     //this writes data to a file
     private void readItems(){
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "todo.txt");
+        File userFile = new File(user.getAndroidFileDir() + "/", user.getUsername() + user.getPassword() + "DrinkList.json");
         try{
-            items = new ArrayList<>(FileUtils.readLines(todoFile));
+            items = new ArrayList<>(FileUtils.readLines(userFile));
+            Log.i("Length of Items", Integer.toString(items.size()));
         }
         catch(IOException e) {
             items = new ArrayList<>();
+            Log.e("Read Fail", e.getMessage());
         }
     }
 
 
     //this writes data to a file
     private void writeItems() {
-        File filesDir = getFilesDir();
-        File todoFile = new File(filesDir, "todo.txt");
+        File userFile = new File(user.getAndroidFileDir() + "/", user.getUsername() + user.getPassword() + "DrinkList.json");
         try{
-            FileUtils.writeLines(todoFile, items);
+            FileUtils.writeLines(userFile, items);
         }
         catch(IOException e) {
             Log.e("IOException in Write", e.getMessage());

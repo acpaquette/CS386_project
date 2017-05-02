@@ -12,4 +12,5 @@
         Created By:\nChandler Hayes\nKelli Ruddy\nConner Schwirian\nLuis Arroyo\nAdam Paquette
     </string>
     <string name="signUp">Sign Up</string>
+    <string name="title_activity_add_drink">AddDrinkActivity</string>
 </resources>
