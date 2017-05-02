@@ -74,7 +74,6 @@ public class ListActivity extends AppCompatActivity {
         File userFile = new File(user.getAndroidFileDir() + "/", user.getUsername() + user.getPassword() + "DrinkList.json");
         try{
             items = new ArrayList<>(FileUtils.readLines(userFile));
-            Log.i("Length of Items", Integer.toString(items.size()));
         }
         catch(IOException e) {
             items = new ArrayList<>();
