@@ -15,17 +15,26 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity"></activity>
+        <activity android:name=".MainActivity" />
         <activity
             android:name=".activity_edit_wine"
             android:label="@string/title_activity_edit_wine"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
-        <activity android:name=".AboutActivity"></activity>
-        <activity android:name=".ListActivity"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity android:name=".AboutActivity" />
+        <activity android:name=".ListActivity" />
         <activity
             android:name=".AddDrinkActivity"
             android:label="@string/title_activity_add_drink"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".ViewDrinkActivity"
+            android:label="@string/title_activity_view_drink"
+            android:parentActivityName=".ListActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.chandler.hack.ListActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    app:layout_behavior="@string/appbar_scrolling_view_behavior"
+    tools:context="com.example.chandler.hack.ViewDrinkActivity"
+    tools:showIn="@layout/activity_view_drink">
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        app:srcCompat="@drawable/beer_icon"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="5dp"
+        android:layout_marginLeft="5dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="110dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:textAlignment="center"
+        android:textSize="12pt"
+        android:id="@+id/drinkName" />
+
+    <RatingBar
+        android:id="@+id/drinkRating"
+        style="@android:style/Widget.DeviceDefault.Light.RatingBar.Indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/drinkDescription"
+        android:layout_alignLeft="@+id/drinkName"
+        android:layout_alignStart="@+id/drinkName"
+        android:layout_marginBottom="10dp"
+        android:layout_marginLeft="48dp"
+        android:numStars="5"
+        android:stepSize="1" />
+
+    <TextView
+        android:id="@+id/drinkDescription"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/imageView3"
+        android:layout_alignStart="@+id/imageView3"
+        android:layout_below="@+id/imageView3"
+        android:layout_marginTop="5dp"
+        android:layout_marginRight="5dp"
+        android:ems="10" />
+</RelativeLayout>

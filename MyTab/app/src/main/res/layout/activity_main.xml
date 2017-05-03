@@ -62,16 +62,6 @@
         android:id="@+id/all_button"
         android:textAppearance="@style/TextAppearance.AppCompat" />
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="HackAZ App"
-        android:textSize="36sp"
-        android:textColor="@android:color/holo_red_dark"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"/>
-
     <Button
         android:text="About"
         android:layout_width="wrap_content"

@@ -38,6 +38,9 @@ public class AddDrinkActivity extends AppCompatActivity {
         description = (EditText) findViewById(R.id.drinkDescription);
         rating = (RatingBar) findViewById(R.id.drinkRating);
 
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +61,9 @@ public class AddDrinkActivity extends AppCompatActivity {
 
     private void writeDrink(){
         try{
-            File userFile = new File(user.getAndroidFileDir() + "/", user.getUsername() + user.getPassword() + "DrinkList.json");
+            File userFile = new File(user.getAndroidFileDir() + "/",
+                    user.getUsername() + user.getPassword() + "DrinkList.json");
+            
             JSONObject obj = new JSONObject();
             try {
                 obj.put("Type", drink.getClass().getCanonicalName().substring(26));

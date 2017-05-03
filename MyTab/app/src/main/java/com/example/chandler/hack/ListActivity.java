@@ -10,6 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import org.apache.commons.io.FileUtils;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.io.IOException;
@@ -65,7 +67,35 @@ public class ListActivity extends AppCompatActivity {
                         // Return true consumes the long click event (marks it handled)
                         return true;
                     }
+                });
 
+        lvItems.setOnItemClickListener(
+                new AdapterView.OnItemClickListener() {
+                    @Override
+                    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                        Intent intent = new Intent(ListActivity.this, ViewDrinkActivity.class);
+                        try {
+                            JSONObject obj = new JSONObject(items.get(position));
+                            Object name = obj.get("Name");
+                            intent.putExtra("name", (String) name);
+
+                            Object description = obj.get("Description");
+                            intent.putExtra("description", (String) description);
+
+                            Object rating = obj.get("Rating");
+                            Log.i("rating type", rating.getClass().toString());
+                            if (rating.getClass() == Integer.class) {
+                                intent.putExtra("rating", (float) ((Integer) rating));
+                            }
+                            else {
+                                intent.putExtra("rating", (float) rating);
+                            }
+                        }
+                        catch (JSONException e) {
+                            Log.e("Not JSON", e.getMessage());
+                        }
+                        startActivity(intent);
+                    }
                 });
     }
 
